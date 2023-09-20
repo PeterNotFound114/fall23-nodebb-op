@@ -36,6 +36,7 @@ interface Teaser {
   timestampISO: string;
   user: UserObjectSlim;
   index: number;
+  group_name?: string,
 }
 
 export type TopicObjectSlim = TopicSlimProperties & TopicSlimOptionalProperties;
