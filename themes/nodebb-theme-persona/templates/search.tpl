@@ -70,6 +70,15 @@
                                     </div>
 
                                     <div class="form-group post-search-item">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>[[search:in-group]]</label>
+                                                <input type="text" class="form-control" id="in-group" placeholder="[[search:in-group]]">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group post-search-item">
                                         <label>[[search:reply-count]]</label>
                                         <div class="row">
                                             <div class="col-md-6">
@@ -147,6 +156,12 @@
                                             <label>
                                                 <input type="radio" name="options" id="show-as-topics">
                                                 [[global:topics]]
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="options" id="show-as-groups">
+                                                [[global:groups]]
                                             </label>
                                         </div>
                                     </div>
