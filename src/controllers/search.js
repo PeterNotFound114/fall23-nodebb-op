@@ -67,6 +67,7 @@ searchController.search = async function (req, res, next) {
         itemsPerPage: req.query.itemsPerPage,
         uid: req.uid,
         qs: req.query,
+        inGroup: req.query.inGroup,
     };
 
     const [searchData, categoriesData] = await Promise.all([

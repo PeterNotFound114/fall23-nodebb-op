@@ -48,13 +48,20 @@ define('forum/search', [
             searchData.categories = form.find('#posted-in-categories').val();
             searchData.searchChildren = form.find('#search-children').is(':checked');
             searchData.hasTags = form.find('#has-tags').tagsinput('items');
+            searchData.inGroup = form.find('#in-group').val();
             searchData.replies = form.find('#reply-count').val();
             searchData.repliesFilter = form.find('#reply-count-filter').val();
             searchData.timeFilter = form.find('#post-time-filter').val();
             searchData.timeRange = form.find('#post-time-range').val();
             searchData.sortBy = form.find('#post-sort-by').val();
             searchData.sortDirection = form.find('#post-sort-direction').val();
-            searchData.showAs = form.find('#show-as-topics').is(':checked') ? 'topics' : 'posts';
+            if (form.find('#show-as-topics').is(':checked')) {
+                searchData.showAs = 'topics';
+            } else if (form.find('#show-as-posts').is(':checked')) {
+                searchData.showAs = 'posts';
+            } else {
+                searchData.showAs = 'groups';
+            }
         }
 
         hooks.fire('action:search.getSearchDataFromDOM', {

@@ -265,6 +265,10 @@ define('search', ['translator', 'storage', 'hooks', 'alerts'], function (transla
             query.hasTags = data.hasTags;
         }
 
+        if (data.inGroup && data.inGroup.length) {
+            query.inGroup = data.inGroup;
+        }
+
         if (parseInt(data.replies, 10) > 0) {
             query.replies = data.replies;
             query.repliesFilter = data.repliesFilter || 'atleast';

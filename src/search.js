@@ -128,6 +128,7 @@ async function filterAndSort(pids, data) {
     postsData = filterByPostcount(postsData, data.replies, data.repliesFilter);
     postsData = filterByTimerange(postsData, data.timeRange, data.timeFilter);
     postsData = filterByTags(postsData, data.hasTags);
+    postsData = filterByGroups(postsData, data.inGroup);
 
     sortPosts(postsData, data);
 
@@ -238,6 +239,14 @@ function filterByTags(posts, hasTags) {
             }
             return hasAllTags;
         });
+    }
+    return posts;
+}
+
+function filterByGroups(posts, group) {
+    if (group && group.length) {
+        posts = posts.filter(post => (post && post.topic && post.topic.group_name &&
+             (group.topic.group_name === group)));
     }
     return posts;
 }
