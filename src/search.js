@@ -116,7 +116,7 @@ async function searchInContent(data) {
 }
 
 async function filterAndSort(pids, data) {
-    if (data.sortBy === 'relevance' && !data.replies && !data.timeRange && !data.hasTags && !plugins.hooks.hasListeners('filter:search.filterAndSort')) {
+    if (data.sortBy === 'relevance' && !data.replies && !data.timeRange && !data.hasTags && !data.inGroup && !plugins.hooks.hasListeners('filter:search.filterAndSort')) {
         return pids;
     }
     let postsData = await getMatchedPosts(pids, data);
