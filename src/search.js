@@ -246,7 +246,7 @@ function filterByTags(posts, hasTags) {
 function filterByGroups(posts, group) {
     if (group && group.length) {
         posts = posts.filter(post => (post && post.topic && post.topic.group_name &&
-             (group.topic.group_name === group)));
+             (post.topic.group_name === group)));
     }
     return posts;
 }
