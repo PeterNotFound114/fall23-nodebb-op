@@ -45,8 +45,8 @@ module.exports = function (grunt) {
         if (!process.argv.includes('--core')) {
             await db.init();
             pluginList = await plugins.getActive();
-            if (!pluginList.includes('nodebb-plugin-composer-default')) {
-                pluginList.push('nodebb-plugin-composer-default');
+            if (!pluginList.includes('nodebb-plugin-composer-op')) {
+                pluginList.push('nodebb-plugin-composer-op');
             }
         }
 
